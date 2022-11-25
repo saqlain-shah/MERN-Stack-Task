@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Ropstam-MERN-test-task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was build on MERN Stack with material-UI and bootstrap as a MERN test task given by Ropstam
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [General Information](##general-info)
+- [Folder Structure](##folder-Structure)
+- [Installation](##installation)
+- [Steps](###steps)
+- [Features](##features)
+- [Project Status](##project-status)
+- [Contact](##Contact)
 
-### `npm start`
+## General Information
 
-Runs the app in the development mode.\
+User Can Register with User Name and Email: if the email is not registered it automatically sends the password to the given email Address. Token Based authentication.
+Vehicles are displayed with there features like company, type, color registration, and manufacture date. Users can apply CRUD Operation On vehicles.
+Users also see the list of the registered user list.
+
+## folder Structure
+
+└── Ropstam-MERN-test-task/
+├── backend/
+│ ├── controllers/
+│ │ ├── auth.js
+│ │ ├── car.js
+│ │ └── user.js
+│ ├── models/
+│ │ ├── Car.js
+│ │ └── User.js
+│ ├── routes/
+│ │ ├── auth.js
+│ │ ├── cars.js
+│ │ └── users.js
+│ ├── utils/
+│ │ ├── error.js
+│ │ └── verifyToken.js
+│ ├── index
+│ ├── package.json
+│ ├── package-lock.json
+│ ├── api.postmain_collection.json
+│ ├── .env
+│ └── .gitignore
+|
+└── frontend/
+├── public
+├── src/
+│ ├── authentication/
+│ │ └── auth
+│ ├── components/
+│ │ ├── VerifyEmail/
+│ │ │ ├── welcomeScreen.jsx
+│ │ │ └── welcomeScreen.css
+│ │ ├── dataTable.jsx
+│ │ ├── login.jsx
+│ │ └── register.jsx
+│ ├── layout/
+│ │ └── dasboard.jsx
+│ ├── methods/
+│ │ ├── vehicles.js
+│ │ └── users.jsx
+│ ├── utils/
+│ │ └── title
+│ ├── App.js
+│ ├── App.test.js
+│ ├── index.css
+│ ├── reportWebVitals.js
+│ └── setupTest.js
+├── package.json
+├── package-lock.json
+├── README.md
+└── .gitignore
+
+## Installation
+
+### Dependencies:
+
+@material-ui/core
+@material-ui/icons
+@mui/icons-material
+@mui/lab
+@mui/material
+@mui/styles
+@material-table
+bootstrap
+axios
+
+### Steps
+
+Creating a New Folder
+Click on `https://github.com/saqlain-shah/saqlain-shah-MERN-test-task-.git`
+Cloning the React app's GitHub Repo git clone `https://github.com/saqlain-shah/saqlain-shah-MERN-test-task-.git`
+Configuring your Cloned App: Once that is done successfully, you need to run `npm install` on your terminal. This will some time to finish running.
+Starting the React app So, run `npm start` on your terminal.
+Once the command is done running, your React app will open on your local host on your default browser.
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+login
+Register
+Dashboard
+Authentication
+Vehicles list
+CRUD Operation on Vehicles
+User List
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Status
 
-### `npm run build`
+Completed
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contact
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[linkedin]: `https://www.linkedin.com/in/saqlain-shah`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[GitHub] : `https://github.com/saqlain-shah`
