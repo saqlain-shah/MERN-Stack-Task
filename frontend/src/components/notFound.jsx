@@ -1,13 +1,10 @@
-import { Button } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import "./welcomeScreen.css";
-
-function WelcomeScreen() {
+function NotFoundScreen() {
   return (
     <>
       <div className="welcomeScreen__container">
-        <h1>Check Your Email!</h1>
+        <h1>404 Notfound!</h1>
         <ul
           style={{
             display: "flex",
@@ -17,8 +14,12 @@ function WelcomeScreen() {
         >
           Got the email?
           <span style={{ width: "10px" }}></span>
-          <Link className="nav-link" to={"/sign-in"} style={{ color: "blue" }}>
-            <Button className="mui-btn mui-btn--raised">Login</Button>
+          <Link
+            className="nav-link"
+            to={"/dashboard"}
+            style={{ color: "blue" }}
+          >
+            Go to Dashboard
           </Link>
         </ul>
       </div>
@@ -26,4 +27,4 @@ function WelcomeScreen() {
   );
 }
 
-export default WelcomeScreen;
+export default NotFoundScreen;

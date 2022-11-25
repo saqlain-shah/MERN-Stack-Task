@@ -14,10 +14,11 @@ import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
-import DashboardIcon from "@mui/icons-material/Dashboard";
+import { Dashboard as DashboardIcon, Person } from "@mui/icons-material/";
 import { useNavigate } from "react-router-dom";
-import { ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import DataTable from "../components/dataTable";
+import { Button, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import UserDataTable from "../components/userDataTable";
+import VehicleDataTable from "../components/vehicleDataTable";
 
 const drawerWidth = 240;
 
@@ -81,6 +82,8 @@ function DashboardContent() {
     setOpen(!open);
   };
 
+  const currentUrl = window.location.href;
+
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
@@ -112,15 +115,15 @@ function DashboardContent() {
             >
               Dashboard
             </Typography>
-            <Link
+            <Button
               onClick={() => {
                 localStorage.clear();
                 history("/sign-in");
               }}
               style={{ color: "white" }}
             >
-              Signout
-            </Link>
+              Logout
+            </Button>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -138,12 +141,20 @@ function DashboardContent() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            <Link to="/dashboard">
-              <ListItemButton>
+            <Link>
+              <ListItemButton onClick={() => history("/dashboard")}>
                 <ListItemIcon>
                   <DashboardIcon />
                 </ListItemIcon>
                 <ListItemText primary="Dashboard" />
+              </ListItemButton>
+            </Link>
+            <Link>
+              <ListItemButton onClick={() => history("/dashboard/users")}>
+                <ListItemIcon>
+                  <Person />
+                </ListItemIcon>
+                <ListItemText primary="Users" />
               </ListItemButton>
             </Link>
             <Divider sx={{ my: 1 }} />
@@ -162,7 +173,16 @@ function DashboardContent() {
           }}
         >
           <Toolbar />
-          <DataTable />
+          {currentUrl === "http://localhost:3000/dashboard" ? (
+            <VehicleDataTable />
+          ) : (
+            ""
+          )}
+          {currentUrl === "http://localhost:3000/dashboard/users" ? (
+            <UserDataTable />
+          ) : (
+            ""
+          )}
         </Box>
       </Box>
     </ThemeProvider>

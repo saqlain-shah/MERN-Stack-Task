@@ -20,15 +20,14 @@ export const register = async (req, res, next) => {
     const appPassword = "kquimuokqmdiwnfo";
     const sender = "testmail4803@gmail.com";
     const subjectText = "Thank You for Sign Up";
+    
     //checking whether the user is already registered or not
     const existedUser = await User.findOne({ email: emailLowerCase });
-    if (existedUser) {
-      console.log("Email Already Registered");
+    if (existedUser)
       return res
         .status(400)
         .json({ success: false, message: "User already exists!" });
-      
-    }
+
     // create Nodemailer reusable transporter object
     let mailTransporter = nodemailer.createTransport({
       service: "gmail",
@@ -36,33 +35,6 @@ export const register = async (req, res, next) => {
         user: gmailId,
         pass: appPassword,
       },
-    });
-    //  defined transport object
-    let details = {
-      from: sender, // sender address
-      to: emailLowerCase, //  receiver address
-      subject: subjectText, // Subject line
-      // concatenating multiple string and variables
-      html:
-        "Hi " +
-        username +
-        "!I am very happy to welcome you on Ropstam Test Task App." +
-        "Your Credentials are:" +
-        " Email: " +
-        emailLowerCase +
-        "Your Password Is : " +
-        randomPassword,
-    };
-    // Preview sent information
-    console.log(details);
-    // Message sent through Nodemailer
-    mailTransporter.sendMail(details, function (err, message) {
-      if (err) {
-        console.log("it has an error", err);
-      } else {
-        console.log(message);
-        res.status(200).send(message);
-      }
     });
 
     //adding salt to protect the password against rainbow table attacks
@@ -74,6 +46,33 @@ export const register = async (req, res, next) => {
       ...req.body,
       email: emailLowerCase,
       password: hash,
+    });
+    //  defined transport object
+    let details = {
+      from: sender, // sender address
+      to: emailLowerCase, //  receiver address
+      subject: subjectText, // Subject line
+      // concatenating multiple string and variables
+      html:
+        "Hi! " +
+        username +
+        "<br> Thanks for being with us, <br> " +
+        "Your Credentials are:<br>" +
+        "Email: <br>" +
+        emailLowerCase +
+        "<br>Password: <br>" +
+        randomPassword,
+    };
+    // Preview sent information
+    console.log(details);
+    // Message sent through Nodemailer
+    mailTransporter.sendMail(details, function (err, message) {
+      if (err) {
+        console.log("Error:", err);
+      } else {
+        console.log(message);
+        res.status(200).send(message);
+      }
     });
 
     //save new user in the database

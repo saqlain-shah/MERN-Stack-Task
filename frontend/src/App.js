@@ -1,10 +1,12 @@
 import React from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import Login from "./components/login";
 import Register from "./components/register";
+import NotFound from "./components/notFound";
 import Dashboard from "./layout/dashboard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import VerifyEmail from "./components/verifyEmail/welcomeScreen";
+import WelcomeScreen from "./components/verifyEmail/welcomeScreen";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -13,8 +15,10 @@ function App() {
         <Route exact path="/" element={<Login />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
-        <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/welcome-screen" element={<WelcomeScreen />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/users" element={<Dashboard />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

@@ -33,6 +33,7 @@ export const addVehicle = async (userData, vehicleData) => {
       vehicleData,
       config
     );
+    return data;
   } catch (error) {
     console.log(error);
   }
@@ -52,6 +53,7 @@ export const updateVehicle = async (userData, vehicleData) => {
       vehicleData,
       config
     );
+    return data;
   } catch (error) {
     console.log(error);
   }
@@ -70,6 +72,7 @@ export const deleteVehicle = async (userData, vehicleData) => {
       `http://localhost:8800/api/cars/delete/${vehicleData._id}`,
       config
     );
+    return data;
   } catch (error) {
     console.log(error);
   }

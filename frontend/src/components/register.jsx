@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signup } from "../authentication/auth";
+import { register } from "../methods/users";
 
-function Signup() {
+function Register() {
   const history = useNavigate();
   const userData = window.localStorage.getItem("userData");
 
@@ -17,14 +17,16 @@ function Signup() {
   }, [history, userData]);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signup(form, history);
+    await register(form, history).then((resp) =>
+      alert(resp.response.data.message)
+    );
   };
   return (
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
           <Link className="navbar-brand" to={"/sign-in"}>
-            Rinor
+          Ropstam
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
@@ -50,6 +52,7 @@ function Signup() {
               <label>Username</label>
               <input
                 type="text"
+                required
                 className="form-control"
                 placeholder="Username"
                 name="username"
@@ -60,6 +63,7 @@ function Signup() {
               <label>Email</label>
               <input
                 type="email"
+                required
                 className="form-control"
                 name="email"
                 placeholder="Email"
@@ -81,4 +85,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Register;

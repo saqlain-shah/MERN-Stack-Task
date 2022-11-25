@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signin } from "../authentication/auth";
+import { login } from "../methods/users";
 
-function Signin() {
+function Login() {
   const history = useNavigate();
 
   const userData = window.localStorage.getItem("userData");
@@ -20,7 +20,9 @@ function Signin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signin(form, history);
+    await login(form, history).then((resp) =>
+      alert(resp.response.data.message)
+    );
   };
 
   return (
@@ -28,7 +30,7 @@ function Signin() {
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
           <Link className="navbar-brand" to={"/sign-in"}>
-            Rinor
+            Ropstam
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
@@ -53,6 +55,7 @@ function Signin() {
             <div className="mb-3">
               <label>Email address</label>
               <input
+                required
                 type="email"
                 className="form-control"
                 placeholder="Enter email"
@@ -63,6 +66,7 @@ function Signin() {
             <div className="mb-3">
               <label>Password</label>
               <input
+                required
                 type="password"
                 className="form-control"
                 placeholder="Enter password"
@@ -85,4 +89,4 @@ function Signin() {
   );
 }
 
-export default Signin;
+export default Login;

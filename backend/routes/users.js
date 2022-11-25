@@ -29,6 +29,6 @@ router.delete("/:id", verifyUser, deleteUser); //DELETE http://localhost:8800/ap
 router.get("/:id", verifyUser, getUser); //POST http://localhost:8800/api/users/:id
 
 //Show  All users details
-router.get("/", verifyUser, getUsers); //GET http://localhost:8800/api/users/
+router.get("/", getUsers); //GET http://localhost:8800/api/users/
 
 export default router;

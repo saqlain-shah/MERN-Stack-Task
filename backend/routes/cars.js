@@ -18,7 +18,7 @@ const router = express.Router();
 //Add Car
 router.post("/create", verifyUser, createCar); //POST http://localhost:8800/api/cars/create
 //All Cars List
-router.get("/list", verifyUser, getCars); // GET http://localhost:8800/api/cars/list
+router.get("/list", getCars); // GET http://localhost:8800/api/cars/list
 //Search Car By Id
 router.get("/search/:id", verifyUser, getCar); //GET http://localhost:8800/api/cars/search/:id
 //Update Car By Id

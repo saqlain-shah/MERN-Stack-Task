@@ -1,6 +1,5 @@
 import axios from "axios";
-
-export const signup = async ({ email, username }, history) => {
+export const register = async ({ email, username }, history) => {
   try {
     const config = {
       headers: {
@@ -13,14 +12,14 @@ export const signup = async ({ email, username }, history) => {
       { email, username },
       config
     );
-
-    history("/verify-email");
+    history("/welcome-screen");
+    return data;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
 
-export const signin = async ({ email, password }, history) => {
+export const login = async ({ email, password }, history) => {
   try {
     const config = {
       headers: {
@@ -37,7 +36,8 @@ export const signin = async ({ email, password }, history) => {
     localStorage.setItem("userData", JSON.stringify(data));
 
     history("/dashboard");
+    return data;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
