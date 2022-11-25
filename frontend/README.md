@@ -6,6 +6,7 @@ This project was build on MERN Stack with material-UI and bootstrap as a MERN te
 
 - [General Information](##general-info)
 - [Folder Structure](##folder-Structure)
+- [Screen Shots](##screen-shots)
 - [Installation](##installation)
 - [Steps](###steps)
 - [Features](##features)
@@ -20,57 +21,45 @@ Users also see the list of the registered user list.
 
 ## folder Structure
 
-└── Ropstam-MERN-test-task/
-├── backend/
-│ ├── controllers/
-│ │ ├── auth.js
-│ │ ├── car.js
-│ │ └── user.js
-│ ├── models/
-│ │ ├── Car.js
-│ │ └── User.js
-│ ├── routes/
-│ │ ├── auth.js
-│ │ ├── cars.js
-│ │ └── users.js
-│ ├── utils/
-│ │ ├── error.js
-│ │ └── verifyToken.js
-│ ├── index
-│ ├── package.json
-│ ├── package-lock.json
-│ ├── api.postmain_collection.json
-│ ├── .env
-│ └── .gitignore
-|
-└── frontend/
-├── public
-├── src/
-│ ├── authentication/
-│ │ └── auth
-│ ├── components/
-│ │ ├── VerifyEmail/
-│ │ │ ├── welcomeScreen.jsx
-│ │ │ └── welcomeScreen.css
-│ │ ├── dataTable.jsx
-│ │ ├── login.jsx
-│ │ └── register.jsx
-│ ├── layout/
-│ │ └── dasboard.jsx
-│ ├── methods/
-│ │ ├── vehicles.js
-│ │ └── users.jsx
-│ ├── utils/
-│ │ └── title
-│ ├── App.js
-│ ├── App.test.js
-│ ├── index.css
-│ ├── reportWebVitals.js
-│ └── setupTest.js
-├── package.json
-├── package-lock.json
-├── README.md
-└── .gitignore
+─ Ropstam-MERN-test-task/
+|___frontend/
+    |
+    ├── public
+    ├── src/
+    │ ├── authentication/
+    │ │ └── auth
+    │ ├── components/
+    │ │ ├── VerifyEmail/
+    │ │ │ ├── welcomeScreen.jsx
+    │ │ │ └── welcomeScreen.css
+    │ │ ├── dataTable.jsx
+    │ │ ├── login.jsx
+    │ │ └── register.jsx
+    │ ├── layout/
+    │ │ └── dasboard.jsx
+    │ ├── methods/
+    │ │ ├── vehicles.js
+    │ │ └── users.jsx
+    │ ├── utils/
+    │ │ └── title
+    │ ├── App.js
+    │ ├── App.test.js
+    │ ├── index.css
+    │ ├── reportWebVitals.js
+    │ └── setupTest.js
+    ├── package.json
+    ├── package-lock.json
+    ├── README.md
+    └── .gitignore
+
+## Screen Shots
+
+- [Login](./src/components/login.jsx)
+- [Register](./src/images/register.JPG)
+- [Verify Email](./src/images/verify%20email.JPG)
+- [Vehicles List](./src/images/vehicles.JPG)
+- [User List](./src/images/user.JPG)
+- [Pagination](./src//images/pagination.JPG)
 
 ## Installation
 

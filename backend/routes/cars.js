@@ -17,14 +17,16 @@ const router = express.Router();
 
 //Add Car
 router.post("/create", verifyUser, createCar); //POST http://localhost:8800/api/cars/create
-//All Cars List
-router.get("/list", getCars); // GET http://localhost:8800/api/cars/list
-//Search Car By Id
-router.get("/search/:id", verifyUser, getCar); //GET http://localhost:8800/api/cars/search/:id
-//Update Car By Id
-router.post("/update/:id", verifyUser, updateCar); //POST http://localhost:8800/api/cars
 //Delete Car
 router.delete("/delete/:id", verifyUser, deleteCar); //DELETE http://localhost:8800/api/cars/delete/:id
+//Update Car By Id
+router.post("/update/:id", verifyUser, updateCar); //POST http://localhost:8800/api/cars
+//All Cars List
+router.get("/list", getCars); // GET http://localhost:8800/api/cars/list
+
+// following endpoints dont need any user verify , because this endpoints are not integrated with frontend ... but these are functional and can test on
+//Search Car By Id
+router.get("/search/:id", verifyUser, getCar); //GET http://localhost:8800/api/cars/search/:id
 //Show Car By their Company wise
 router.post("/company", verifyUser, getCarByCompany); //POST http://localhost:8800/api/cars/company
 //Show Paginated Cars List of limit 3
@@ -37,4 +39,5 @@ router.get("/company/:id", verifyUser, getCarByCompany); //GET http://localhost:
 router.get("/model/:id", verifyUser, getCarByModel); //GET http://localhost:8800/api/cars/model/:id
 //Paginated list of Car limit is 3 on per page
 router.post("/paginated-car-list", verifyUser, getPaginatedCarDetails); //POST http://localhost:8800/api/cars/paginated-car-list
+
 export default router;

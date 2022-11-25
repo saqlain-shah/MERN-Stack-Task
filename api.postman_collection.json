@@ -30,7 +30,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "\r\n {\r\n    \"username\":\"abcd\",\r\n    \"email\":\"abcd@abcd.com\"\r\n }\r\n ",
+					"raw": "{\r\n    \"username\": \"saqlain shah\",\r\n    \"email\": \"saqlainshahbaltee@gmail.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -60,7 +60,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"abcd@abcd.com\",\r\n    \"password\":\"aeYI2yKu\"\r\n}",
+					"raw": "{\r\n    \r\n    \"email\": \"saqlainshahbaltee@gmail.com\",\r\n    \"password\":\"250pGOjd\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -86,10 +86,20 @@
 		{
 			"name": "Get Single User",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODBjZWRkOTMyOTJkMWZlYTAxNDE0YSIsImlhdCI6MTY2OTM5MTcyMn0._usCoEw_O4GWUrn3f9sDFzyDt0MTYF0QTA8lN2fifg0",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8800/api/users/62a76628862ac15a92d6877e",
+					"raw": "http://localhost:8800/api/users/6380cedd93292d1fea01414a",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -98,7 +108,7 @@
 					"path": [
 						"api",
 						"users",
-						"62a76628862ac15a92d6877e"
+						"6380cedd93292d1fea01414a"
 					]
 				}
 			},
@@ -107,6 +117,16 @@
 		{
 			"name": "Get All User",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODBlYWZkZjBiNTY2OTUxZDlhNmJjOSIsImlhdCI6MTY2OTM5MzI3MH0.MqMnqxwItb9vUaJ1RYTvlq_YoM1oZeGCnzp7K-qJPyY",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -128,10 +148,20 @@
 		{
 			"name": "Delete User",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODBlYWZkZjBiNTY2OTUxZDlhNmJjOSIsImlhdCI6MTY2OTM5MzI3MH0.MqMnqxwItb9vUaJ1RYTvlq_YoM1oZeGCnzp7K-qJPyY",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8800/api/users/",
+					"raw": "http://localhost:8800/api/users/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -140,7 +170,13 @@
 					"path": [
 						"api",
 						"users",
-						""
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
 					]
 				}
 			},
@@ -152,7 +188,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8800/api/users",
+					"raw": "http://localhost:8800/api/users/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -160,7 +196,14 @@
 					"port": "8800",
 					"path": [
 						"api",
-						"users"
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
 					]
 				}
 			},
@@ -172,6 +215,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODBjZWRkOTMyOTJkMWZlYTAxNDE0YSIsImlhdCI6MTY2OTM5MTcyMn0._usCoEw_O4GWUrn3f9sDFzyDt0MTYF0QTA8lN2fifg0",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -205,6 +258,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODBjZWRkOTMyOTJkMWZlYTAxNDE0YSIsImlhdCI6MTY2OTM5MTcyMn0._usCoEw_O4GWUrn3f9sDFzyDt0MTYF0QTA8lN2fifg0",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -236,6 +299,16 @@
 		{
 			"name": "Add Car",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODBjZWRkOTMyOTJkMWZlYTAxNDE0YSIsImlhdCI6MTY2OTM5MTcyMn0._usCoEw_O4GWUrn3f9sDFzyDt0MTYF0QTA8lN2fifg0",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -248,7 +321,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8800/api/cars",
+					"raw": "http://localhost:8800/api/cars/create",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -256,7 +329,8 @@
 					"port": "8800",
 					"path": [
 						"api",
-						"cars"
+						"cars",
+						"create"
 					]
 				}
 			},
@@ -265,10 +339,20 @@
 		{
 			"name": "Get Car",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODBlYWZkZjBiNTY2OTUxZDlhNmJjOSIsImlhdCI6MTY2OTM5MzI3MH0.MqMnqxwItb9vUaJ1RYTvlq_YoM1oZeGCnzp7K-qJPyY",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8800/api/cars/search/637d21383dd59607df1a8062",
+					"raw": "http://localhost:8800/api/cars/search/6380e75734d41b464e79b8e6",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -278,7 +362,7 @@
 						"api",
 						"cars",
 						"search",
-						"637d21383dd59607df1a8062"
+						"6380e75734d41b464e79b8e6"
 					]
 				}
 			},
@@ -287,6 +371,16 @@
 		{
 			"name": "Get All Cars",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODBlYWZkZjBiNTY2OTUxZDlhNmJjOSIsImlhdCI6MTY2OTM5MzI3MH0.MqMnqxwItb9vUaJ1RYTvlq_YoM1oZeGCnzp7K-qJPyY",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -308,10 +402,20 @@
 		{
 			"name": "Delete Car",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODBlYWZkZjBiNTY2OTUxZDlhNmJjOSIsImlhdCI6MTY2OTM5MzI3MH0.MqMnqxwItb9vUaJ1RYTvlq_YoM1oZeGCnzp7K-qJPyY",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8800/api/cars/delete/637d21383dd59607df1a8062",
+					"raw": "http://localhost:8800/api/cars/delete/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -321,7 +425,13 @@
 						"api",
 						"cars",
 						"delete",
-						"637d21383dd59607df1a8062"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
 					]
 				}
 			},
@@ -330,6 +440,16 @@
 		{
 			"name": "Update Car",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODBjZWRkOTMyOTJkMWZlYTAxNDE0YSIsImlhdCI6MTY2OTM5MTcyMn0._usCoEw_O4GWUrn3f9sDFzyDt0MTYF0QTA8lN2fifg0",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -342,7 +462,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8800/api/cars/update/637cf47fb933edd2d3fb5d20",
+					"raw": "http://localhost:8800/api/cars/update/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -352,7 +472,13 @@
 						"api",
 						"cars",
 						"update",
-						"637cf47fb933edd2d3fb5d20"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
 					]
 				}
 			},
@@ -361,6 +487,16 @@
 		{
 			"name": "Paginated Car Details",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODBjZWRkOTMyOTJkMWZlYTAxNDE0YSIsImlhdCI6MTY2OTM5MTcyMn0._usCoEw_O4GWUrn3f9sDFzyDt0MTYF0QTA8lN2fifg0",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -371,7 +507,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"page\":5\r\n\r\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -379,7 +515,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8800/api/cars/paginated-list?=",
+					"raw": "http://localhost:8800/api/cars/paginated-list",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -389,48 +525,6 @@
 						"api",
 						"cars",
 						"paginated-list"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": ""
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getCarByCompany",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "page",
-						"value": "6",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"company\": \"Toyota\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8800/api/cars/company",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8800",
-					"path": [
-						"api",
-						"cars",
-						"company"
 					]
 				}
 			},
