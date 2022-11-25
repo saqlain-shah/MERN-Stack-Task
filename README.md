@@ -52,15 +52,6 @@ Users also see the list of the registered user list.
     ├── README.md
     └── .gitignore
 
-## Screen Shots
-
-- [Login](./src/components/login.jsx)
-- [Register](./src/images/register.JPG)
-- [Verify Email](./src/images/verify%20email.JPG)
-- [Vehicles List](./src/images/vehicles.JPG)
-- [User List](./src/images/user.JPG)
-- [Pagination](./src//images/pagination.JPG)
-
 ## Installation
 
 ### Dependencies:
