@@ -83,6 +83,7 @@ login
 Register
 Dashboard
 Authentication
+Valaidations
 Vehicles list
 CRUD Operation on Vehicles
 User List
